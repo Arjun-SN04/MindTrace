@@ -1,0 +1,16 @@
+{
+  "name": "mindtrace",
+  "private": true,
+  "description": "MINDTRACE: The City That Lies — a browser-based 3D detective game",
+  "type": "module",
+  "scripts": {
+    "install:all": "npm install && npm --prefix frontend install && npm --prefix backend install",
+    "dev": "concurrently -k -n api,web -c blue,magenta \"npm --prefix backend run dev\" \"npm --prefix frontend run dev\"",
+    "build": "npm --prefix frontend run build",
+    "check": "npm --prefix frontend run typecheck && npm --prefix frontend run lint && npm --prefix backend run typecheck && npm --prefix backend test",
+    "test": "npm --prefix backend test"
+  },
+  "devDependencies": {
+    "concurrently": "^10.0.6"
+  }
+}
